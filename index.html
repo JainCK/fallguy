@@ -1,20 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Avoid Falling Objects</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Obstacle Game</title>
     <link rel="stylesheet" href="styles.css" />
+    <style></style>
   </head>
   <body>
-    <div id="game-container">
-      <div id="player"></div>
-      <div id="score">Score: 0</div>
-      <div id="game-over">
-        <h2>Game Over!</h2>
-        <p id="final-score">Your score: 0</p>
-        <button id="restart-button">Play Again</button>
+    <div id="ui-container">
+      <div id="score-display">Score: 0</div>
+
+      <div id="menu" class="hidden">
+        <div id="login-view">
+          <h2>3D Obstacle Game</h2>
+          <input type="text" id="username-input" placeholder="Enter username" />
+          <input
+            type="password"
+            id="password-input"
+            placeholder="Enter password"
+          />
+          <button id="login-button">Login</button>
+          <button id="register-button">Register</button>
+          <p id="login-message"></p>
+        </div>
+
+        <div id="game-over-view" class="hidden">
+          <h2>Game Over!</h2>
+          <p id="final-score">Your score: 0</p>
+          <button id="restart-button">Play Again</button>
+          <button id="menu-button">Main Menu</button>
+        </div>
+
+        <div id="main-menu-view" class="hidden">
+          <h2>Welcome, <span id="user-display"></span>!</h2>
+          <button id="start-game-button">Start Game</button>
+          <button id="logout-button">Logout</button>
+
+          <h3>Leaderboard</h3>
+          <div id="leaderboard">
+            <table id="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Player</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+                <!-- Leaderboard entries will be added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
